@@ -46,7 +46,7 @@ namespace LicenseCheck1
         private static void ResetNumberOfCons()
         {
             int currentHour = DateTime.UtcNow.Hour;
-            if (currentHour > reset_hour)
+            if (currentHour > reset_hour || (reset_hour == 23 && currentHour != 23))
             {
                 foreach (EmailCounter emailObj in emailList)
                 {
